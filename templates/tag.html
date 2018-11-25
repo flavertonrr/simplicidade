@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <main role="main">
+
+
+        <div class="row">
+            <div class="col-lg-8">
+
+                <h2>Tag: {{ tag }}</h2>
+                <p class="sub-title"><a href="{{ SITEURL }}/t">Todas as tags</a></p>
+
+            </div>
+
+        </div>
+
+        {% for article in articles_page.object_list %}
+
+            <div class="row flex-column-reverse flex-md-row spacer-bottom">
+                <div class="col-md-10">
+
+                    <h5 class="lead">
+                        <a href="{{ SITEURL }}/{{ article.url }}">
+                            {{ article.title }}
+                        </a>
+                    </h5>
+
+                </div>
+
+                <div class="col-md-2 date-column">
+
+                    <h5 class="lead">
+                        <time class="light" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %d') }}</time>
+                    </h5>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </main>
+
+{% endblock content %}

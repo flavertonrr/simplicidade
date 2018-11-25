@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="{{ SITENAME }}">
+    <meta name="description" content="{{ SITESUBTITLE }}">
+
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ SITEURL }}/theme/css/simplicidade.css" rel="stylesheet">
+
+    <!-- Syntax highlight -->
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/zenburn.css">
+
+    {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+    {% if FAVICON_URL %}
+        <link rel="icon" href="{{ FAVICON_URL }}" title="{{ SITENAME }} favicon" />
+    {% endif %}
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+          <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+          {% if SITESUBTITLE %} <p class="lead">{{ SITESUBTITLE }}</p>{% endif %}
+
+        </div>
+
+        {% block content %}
+        {% endblock content %}
+
+        <footer class="footer text-center">
+            <p class="lead">
+
+                {% if USE_CUSTOM_MENU %}
+                    {% for name, url in CUSTOM_MENUITEMS %}
+                        <a href="{{ SITEURL }}/{{ url }}">{{ name|lower }}</a>&nbsp;·&nbsp;
+                    {% endfor %}
+                {% endif %}
+
+                {% if NEWSLETTER_URL %} 
+                    <a href="{{ NEWSLETTER_URL }}" target="_blank">newsletter</a>&nbsp;·&nbsp;
+                {% endif %}
+
+                <a href="{{ SITEURL }}/c">categorias</a>
+
+                {% if FEED_ALL_ATOM %}
+                    &nbsp;·&nbsp;<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">rss</a>
+                {% endif %}
+
+
+            </p>
+            {% if TRAVIS_CI %}
+                <p><small>travis · {{ CI_JOB_NUMBER }} · {{ CI_COMMIT_HASH }}</small></p>
+            {% else %}
+                <p><small>manual deploy · {{ CI_COMMIT_HASH }}</small></p>
+            {% endif %}
+            <p><small>{{ SITEFOOTER }}</small></p>
+        </footer>
+
+    </div> <!-- /container -->
+
+    {% include "ga.html" %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  </body>
+</html>
