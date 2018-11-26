@@ -9,7 +9,7 @@
 
         <div class="row">
           <div class="col-lg-12 text-justify">
-            <h2>{{ article.title }}</h2>
+            <h1>{{ article.title }}</h1>
             <p class="sub-title"><time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %d, %Y') }}</time>&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}" class="badge badge-light light">{{ article.category }}</a></p>
           </div>
         </div>
