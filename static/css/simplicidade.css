@@ -127,12 +127,12 @@ body {
 }
 
 a {
-  color: red;
+  color: #ff4c05;
   font-weight: 100;
 }
 
 a:hover {
-  color: red;
+  color: #ff4c05;
   font-weight: 100;
 }
 
@@ -146,7 +146,7 @@ a:hover {
 }
 
 .spacer-top {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
 }
 
 /* Move date on div */
@@ -196,4 +196,9 @@ li.tag-4 {
 ul.tagcloud .list-group-item <span>.badge {
     background-color: grey;
     color: white;
+}
+
+/* Plyr custom */
+.plyr--full-ui input[type='range'] {
+    color: #ff4c05;
 }

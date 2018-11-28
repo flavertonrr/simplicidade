@@ -11,6 +11,11 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    {% if PLAYER_ENABLE %}
+        <!-- Plyr player-->
+        <link rel="stylesheet" href="https://cdn.plyr.io/3.4.7/plyr.css">
+    {% endif %}
+
     <!-- Custom styles for this template -->
     <link href="{{ SITEURL }}/theme/css/simplicidade.css" rel="stylesheet">
 
@@ -76,6 +81,11 @@
     {% include "ga.html" %}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+    {% if PLAYER_ENABLE %}
+        <script src="https://cdn.plyr.io/3.4.7/plyr.js"></script>
+        <script src="{{ SITEURL }}/theme/js/plyr.custom.js"></script>
+    {% endif %}
 
   </body>
 </html>
