@@ -5,7 +5,7 @@
         {% for year, year_articles in articles|groupby('date.year')|reverse %}
             <div class="row">
                 <div class="col-lg-12 spacer-top">
-                    <h1 class="text-center light">{{ year }}</h1>
+                    <h2 class="text-center light">{{ year }}</h2>
                 </div>
             </div>
             {% for month, month_articles in year_articles|groupby('date.month')|reverse %}
