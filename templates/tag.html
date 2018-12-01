@@ -5,7 +5,11 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1>Tag: {{ tag }}</h1>
-                <p class="sub-title"><a href="{{ SITEURL }}/t">Todas as tags</a></p>
+                <p class="sub-title">
+                    <a href="{{ SITEURL }}/t">
+                        Todas as tags
+                    </a>
+                </p>
             </div>
         </div>
         {% for article in articles_page.object_list %}
@@ -19,7 +23,9 @@
                 </div>
                 <div class="col-md-2 date-column">
                     <h5 class="lead">
-                        <time class="light" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %d') }}</time>
+                        <time class="light" datetime="{{ article.date.isoformat() }}">
+                            {{ article.date.strftime('%b %d') }}
+                        </time>
                     </h5>
                 </div>
             </div>
