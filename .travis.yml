@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "8"
+
+install:
+  - npm install -g csslint
+  - npm install -g jshint
+
+jobs:  
+  include:
+    - stage: "js"
+      script: jshint static/js
+    - stage: "css"
+      script: csslint static/css
