@@ -41,7 +41,6 @@
         <div class="jumbotron">
           <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
           {% if SITESUBTITLE %} <p class="lead">{{ SITESUBTITLE }}</p>{% endif %}
-
         </div>
 
         {% block content %}
@@ -52,20 +51,21 @@
 
                 {% if USE_CUSTOM_MENU %}
                     {% for name, url in CUSTOM_MENUITEMS %}
-                        <a href="{{ SITEURL }}/{{ url }}">{{ name|lower }}</a>&nbsp;·&nbsp;
+                        <a href="{{ SITEURL }}/{{ url }}">{{ name|lower }}</a>
                     {% endfor %}
                 {% endif %}
 
                 {% if NEWSLETTER_URL %} 
-                    <a href="{{ NEWSLETTER_URL }}" target="_blank">newsletter</a>&nbsp;·&nbsp;
+                    &nbsp;·&nbsp;<a href="{{ NEWSLETTER_URL }}" target="_blank">newsletter</a>
                 {% endif %}
 
-                <a href="{{ SITEURL }}/c">categorias</a>
+                {% if CATEGORY_URL %}
+                    &nbsp;·&nbsp;<a href="{{ SITEURL }}/c">categorias</a>
+                {% endif %}
 
                 {% if FEED_ALL_ATOM %}
                     &nbsp;·&nbsp;<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">rss</a>
                 {% endif %}
-
 
             </p>
             {% if TRAVIS_CI %}
