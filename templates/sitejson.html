@@ -1,0 +1,16 @@
+{
+  "pages": [
+    {% for article in articles %}
+      {
+        "title": "{{ article.title|striptags }}",
+        "url": "{{ SITEURL }}/{{ article.url }}"
+      },
+    {% endfor %}
+    {% for page in pages %}
+      {
+        "title": "{{ page.title|striptags }}",
+        "url": "{{ SITEURL }}/{{ page.url }}"
+      }{{ "," if not loop.last }}
+    {% endfor %}
+  ]
+}
