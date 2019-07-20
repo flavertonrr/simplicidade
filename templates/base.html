@@ -22,6 +22,20 @@
     <!-- Syntax highlight -->
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/zenburn.css">
 
+    <!-- Open Graph -->
+    {% if AUTHOR %}
+        <meta property="og:title" content="{{ AUTHOR }}"/>
+    {% endif %}
+    {% if OPENGRAPH_IMG_URL %}
+        <meta property="og:image" content="{{ OPENGRAPH_IMG_URL }}"/>
+    {% endif %}
+    {% if dl %}
+        <meta property="og:description" content="{{ SITEDESCRIPTION }}"/>
+    {% endif %}
+    {% if SITEURL %}
+        <meta property="og:url" content="{{ SITEURL }}/{{ url }}" />
+    {% endif %}
+
     {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
     {% endif %}
