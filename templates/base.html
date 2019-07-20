@@ -57,7 +57,7 @@
             <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
             {% if SITESUBTITLE %}<p class="lead">{{ SITESUBTITLE }}</p>{% endif %}
             <p class="lead">
-                {% if USE_CUSTOM_MENU %}
+                {% if CUSTOM_MENUITEMS %}
                     {% for name, url in CUSTOM_MENUITEMS %}
                         <a href="{{ SITEURL }}/{{ url }}">{{ name|lower }}</a>
                         {% if CUSTOM_MENUITEMS[-1][0] != name %}
@@ -65,8 +65,11 @@
                         {% endif %}
                     {% endfor %}
                 {% else %}
-                    {% for name, url in pages %}
-                        <a href="{{ SITEURL }}/{{ url }}">{{ name|lower }}</a>
+                    {% for page in pages %}
+                        <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title|lower }}</a>
+                        {% if pages[-1].title != page.title %}
+                            &nbsp;·&nbsp;
+                        {% endif %}
                     {% endfor %}
                 {% endif %}
             </p>
@@ -78,7 +81,7 @@
         <footer class="footer text-center">
             <p class="lead">
 
-                {% if USE_CUSTOM_MENU %}
+                {% if CUSTOM_MENUITEMS %}
                     {% for name, url in CUSTOM_MENUITEMS %}
                         <a href="{{ SITEURL }}/{{ url }}">{{ name|lower }}</a>
                         {% if CUSTOM_MENUITEMS[-1][0] != name %}
@@ -86,8 +89,11 @@
                         {% endif %}
                     {% endfor %}
                 {% else %}
-                    {% for name, url in pages %}
-                        <a href="{{ SITEURL }}/{{ url }}">{{ name|lower }}</a>
+                    {% for page in pages %}
+                        <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title|lower }}</a>
+                        {% if pages[-1][0] != page.title %}
+                            &nbsp;·&nbsp;
+                        {% endif %}
                     {% endfor %}
                 {% endif %}
 
