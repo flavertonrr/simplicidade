@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main role="main">
+<!--         <div class="row">
+            <div class="col-lg-12">
+                <h1>
+                    Todos os feeds
+                </h1>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>
+                    Lista com todos os feeds que são gerados pelo blog
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul>
+                    <li>
+                        Geral (Português)
+                        -
+                        <a href="{{ SITEURL }}/feeds/all.atom.xml" class="badge badge-light light">
+                            {{ SITEURL }}/feeds/all.atom.xml
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    {% for (category, articles) in categories %}
+                        <li>
+                            {{ category }}
+                            -
+                            <a href="{{ SITEURL }}/feeds/{{ category.slug }}.atom.xml" class="badge badge-light light">
+                                {{ SITEURL }}/feeds/{{ category.slug }}.atom.xml
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
