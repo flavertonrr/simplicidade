@@ -82,14 +82,13 @@ body {
   text-decoration: none;
 }
 
-a {
-  color: #ff4c05;
-  font-weight: 100;
+.jumptron .lead a {
+  color: #2c2c2c;
 }
 
-a:hover {
+.jumptron .lead a:hover {
   color: #ff4c05;
-  font-weight: 100;
+  text-decoration: none;
 }
 
 .jumbotron a, .jumbotron a:hover {
