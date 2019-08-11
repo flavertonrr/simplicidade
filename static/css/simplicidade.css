@@ -73,6 +73,15 @@ body {
   margin-top: -0.7rem;
 }
 
+a {
+  color: #2c2c2c;
+}
+
+a:hover {
+  color: #ff4c05;
+  text-decoration: none;
+}
+
 .col-md-10 a, footer .lead a {
   color: #2c2c2c;
 }
